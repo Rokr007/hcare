@@ -28,6 +28,21 @@ app.config(['$routeProvider', function($routeProvider){
 	    .when('/healthyliving/adolescent', {
 	    	templateUrl: 'static-partials/adolescent-health.html'
 	    })
+	    .when('/healthyliving/elderly', {
+	    	templateUrl: 'static-partials/elderly-health.html'
+	    })
+	    .when('/healthyliving/diet', {
+	    	templateUrl: 'static-partials/healthy-diet.html'
+	    })
+	    .when('/healthyliving/alcoholusedisorder', {
+	    	templateUrl: 'static-partials/alochol-use-disorder.html'
+	    })
+	    .when('/healthyliving/womenhealth', {
+	    	templateUrl: 'static-partials/women-health.html'
+	    })
+	    .when('/healthyliving/symptoms', {
+	    	templateUrl: 'static-partials/symptoms.html'
+	    })
 	    .when('/bloodbank/home', {
 	    	templateUrl: 'partials/bloodbankhome.html',
 	    	controller: 'BBHomeCtrl'
