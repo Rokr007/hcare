@@ -25,6 +25,9 @@ app.config(['$routeProvider', function($routeProvider){
 	    .when('/healthyliving/home', {
 	    	templateUrl: 'static-partials/healthyhome.html'
 	    })
+	    .when('/healthyliving/adolescent', {
+	    	templateUrl: 'static-partials/adolescent-health.html'
+	    })
 	    .when('/bloodbank/home', {
 	    	templateUrl: 'partials/bloodbankhome.html',
 	    	controller: 'BBHomeCtrl'
