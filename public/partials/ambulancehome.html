@@ -1,0 +1,40 @@
+<div style="top: 0;width: 100%;">
+	<div class="panel panel-primary fixed" style="background-color: #3E4551; width: 100%;">
+		<div class="panel panel-heading">
+		<h3 class="panel-title" style="">	
+		<center><span class="glyphicon glyphicon-plus"></span> AMBULANCE DIRECTORY SERVICE</center></h3>
+		</div>
+		<div class="" style="text-align: center;">			
+			<label style="padding: 5px;" class="panel panel-body">Hospital Name: <input type="text"  class="bg-info" ng-model="searchName"></label>
+			<label style="padding: 5px;" class="panel panel-body">Address: <input type="text" class="bg-info" ng-model="searchAddress"></label>
+			<span>
+			<button type="button" class="btn btn-primary" ng-click="search()">Search</button>
+			<button type="button" class="btn btn-default" ng-click="resetAll()">Reset</button>
+			<a type="button" class="btn btn-default" href="/#/directory/home">Back to Main</a>
+			</div>
+		</div>
+	</div>
+	<div>
+	<table class="table table-bordered table-hover">
+		<thead>
+			<tr class="bg-primary">
+				<th>Hospital Name</th>
+				<th>Address</th>
+				<th>Pincode</th>
+				<th>Contacts</th>
+			</tr>
+		</thead>
+		<tbody style="background: rgba(255,255,255,0.5);">
+			<div>
+				<tr ng-repeat="ambulance in ambulances | filter:{Hospital_Name:searchN} | filter:{Address:searchA} | orderBy:'Hospital_Name' ">
+					<td>{{ambulance.Hospital_Name}}</td>
+					<td>{{ambulance.Address}}</td>
+					<td>{{ambulance.PIN}}</td>
+					<td>{{ambulance.Contacts}}</td>
+				</tr>				
+			</div>			
+		</tbody>		
+	</table>
+	<h4 class="panel panel-body" style="text-align: center; background: rgba(255,255,255,0.5);" ng-show="(ambulances | filter:{Hospital_Name:searchN} | filter:{Address:searchA}).length == 0">No Results!</h4>		
+	</div>
+</div>

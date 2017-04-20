@@ -1,0 +1,43 @@
+<div>
+	
+	<nav class="navbar navbar-inverse">
+  		<div class="container-fluid">
+    		<div class="navbar-header">
+      			<a class="navbar-brand" href="/#/bloodbank/home">Blood Bank</a>
+    		</div>
+    	<ul class="nav navbar-nav">
+      		<li><a href="/#/bloodbank/home">HOME</a></li>
+      		<li><a href="/#/bloodbank/about">ABOUT</a></li>
+      		<li><a href="/#/bloodbank/searchdonors">SEARCH DONORS</a></li>
+      		<li><a href="/#/bloodbank/registerdonor">REGISTER AS DONOR</a></li>
+            <li><a href="/#/bloodbank/requestblood">REQUEST BLOOD</a></li>
+            <li><a href="/#/bloodbank/bloodtips">BLOOD TIPS</a></li>
+      		<li><a href="/#/bloodbank/contact">CONTACT US</a></li>      
+    	</ul>
+  		</div>
+  	</nav>
+
+  	<div>
+  		<div><h3>Search Results</h3></div>
+
+  		<div>
+  			<div class="panel panel-default">
+  				<div class="panel-heading">
+  					<h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> {{donor.Full_Name}} </h3>
+  				</div>
+  				<div class="panel panel-body">
+  					<p><span class="glyphicon glyphicon-user"></span> Gender: {{donor.Gender}} </p>
+  					<p><span class="glyphicon glyphicon-calendar"></span> Date of Birth: {{donor.Date_of_birth}} </p>
+  					<p><span class="glyphicon glyphicon-tint"></span> Blood Group: {{donor.Bloodgroup}} </p>
+  					<p><span class="glyphicon glyphicon-tower"></span> Weight: {{donor.Weight}} Kg </p>
+            <p><span class="glyphicon glyphicon-envelope"></span> Email: {{donor.Email}} Kg </p>
+  					<p><span class="glyphicon glyphicon-phone"></span> Mobile: {{donor.Mobile}} </p>
+  					<p><span class="glyphicon glyphicon-map-marker"></span> Address: {{donor.Address}} </p>
+  					<p><span class="glyphicon glyphicon-move"></span> City: {{donor.City}} </p>
+  					<p><span class="glyphicon glyphicon-globe"></span> Pincode: {{donor.Pincode}} </p>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+
+</div>

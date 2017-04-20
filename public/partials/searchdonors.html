@@ -1,0 +1,88 @@
+<div>
+	
+	<nav class="navbar navbar-inverse">
+  		<div class="container-fluid">
+    		<div class="navbar-header">
+      			<a class="navbar-brand" href="/#/bloodbank/home">Blood Bank</a>
+    		</div>
+    	<ul class="nav navbar-nav">
+      		<li><a href="/#/bloodbank/home">HOME</a></li>
+      		<li><a href="/#/bloodbank/about">ABOUT</a></li>
+      		<li class="active"><a href="/#/bloodbank/searchdonors">SEARCH DONORS</a></li>
+      		<li><a href="/#/bloodbank/registerdonor">REGISTER AS DONOR</a></li>
+            <li><a href="/#/bloodbank/requestblood">REQUEST BLOOD</a></li>
+            <li><a href="/#/bloodbank/bloodtips">BLOOD TIPS</a></li>
+      		<li><a href="/#/bloodbank/contact">CONTACT US</a></li>
+      		<li><a href="/#/">BACK TO MAIN</a></li>      
+    	</ul>
+  		</div>
+  	</nav>
+
+  	<div>
+  		<div class="panel panel-default fixed" style="background-color: #e31933; width: 100%; height: 180px;">
+		<div class="panel panel-heading">
+		<h3 class="panel-title" style="text-align: center;">SEARCH BLOOD DONORS</h3>
+		</div>
+		<div class="" style="text-align: center;">
+		<div class="row">	
+			<div class="col-md-3">		
+			<label style="padding: 0px;" class="panel-body"><p style="color: #ffffff; font-size: 16px;">Blood Group: </p> 
+				<select name="searchBlood" class="panel-body" ng-model="searchBlood" style="font-size: 16px">
+				<option value="">SELECT</option>
+				<option value="A+">A+</option>
+				<option value="B+">B+</option>
+				<option value="AB+">AB+</option>
+				<option value="O+">O+</option>				
+				<option value="A-">A-</option>
+      			<option value="B-">B-</option>
+      			<option value="AB-">AB-</option>
+      			<option value="O-">O-</option>
+    			</select>	
+			</label>
+			</div>
+			<div class="col-md-3">
+			<label style="padding: 0px;" class="panel-body"><p style="color: #ffffff; font-size: 16px;">City: </p>			
+			<select name="searchCity" class="panel-body" ng-model="searchCity"  style="font-size: 16px">
+				<option value="">SELECT</option>
+				<option ng-repeat="city in cities | orderBy:'Name' " value="{{city.Name}}" >{{city.Name}}</option>
+			</select>
+			</label>		
+			</div>
+			<div class="col-md-3">
+			<label><p style="color: #ffffff;"><span class="glyphicon glyphicon-search"></span></p>
+			<button type="button" class="btn btn-primary btn-lg" ng-click="search()" style="max-width: 140px">
+			<p style="color: #ffffff; font-size: 16px;">Search</p></button>
+			</label>
+			</div>
+			<div class="col-md-3">
+			<label><p style="color: #ffffff;"><span class="glyphicon glyphicon-refresh"></span></p>
+			<button type="button" class="btn btn-default" ng-click="resetAll()">
+			<p style="font-size: 16px;">Reset</p></button>
+			</label>
+			</div>
+			</div>
+		    </div>
+		</div>    
+	</div>
+
+	<div>
+		<div ng-repeat="donor in donors | filter:{Bloodgroup:searchB} | filter:{City:searchC} |orderBy:'Full_Name' ">
+			<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<p><span class="glyphicon glyphicon-user"></span> <B>Name: </B> {{donor.Full_Name}} </p>
+					<p><span class="glyphicon glyphicon-tint"></span> <B>Blood Group: </B> {{donor.Bloodgroup}} </p>
+					<p><span class="glyphicon glyphicon-king"></span> <B>Gender:</B> {{donor.Gender}} </p>
+					<p><span class="glyphicon glyphicon-move"></span> <B>City:</B> {{donor.City}} </p>
+				<div>
+				<a href="/#/bloodbank/searchdonors/email/{{donor._id}}" class="form-control btn btn-primary">Send Mail</a><br/>
+				<a href="/#/bloodbank/searchdonors/{{donor._id}}" class="form-control btn btn-primary">View Contact Detail</a>
+				</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div align="center"><p ng-show="(donors | filter:{Bloodgroup:searchB} | filter:{City:searchC}).length == 0">No Results!</p></div>
+  	</div>
+  		
+</div>

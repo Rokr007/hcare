@@ -1,0 +1,73 @@
+<div>
+
+	<nav class="navbar navbar-inverse">
+  		<div class="container-fluid">
+    		<div class="navbar-header">
+      			<a class="navbar-brand" href="/#/bloodbank/home">Blood Bank</a>
+    		</div>
+    	<ul class="nav navbar-nav">
+      		<li class="active"><a href="/#/bloodbank/home">HOME</a></li>
+          <li><a href="/#/bloodbank/about">ABOUT</a></li>
+      		<li><a href="/#/bloodbank/searchdonors">SEARCH DONORS</a></li>
+      		<li><a href="/#/bloodbank/registerdonor">REGISTER AS DONOR</a></li>
+          <li><a href="/#/bloodbank/requestblood">REQUEST BLOOD</a></li>
+          <li><a href="/#/bloodbank/bloodtips">BLOOD TIPS</a></li>
+      		<li><a href="/#/bloodbank/contact">CONTACT US</a></li> 
+          <li><a href="/#/">BACK TO MAIN</a></li>      
+    	</ul>
+  		</div>
+  </nav>
+
+  <div>
+    <div class="jumbotron" style="background-color: #e31933">
+      <h1 style="color: #ffffff;" align="center">Blood Bank</h1>
+    </div>
+    <div>
+      <!--Donors count -->
+      <div class="col-md-6">
+      <div class="panel">
+          <center>
+          <img src="images/donors.jpg" style="width: 160px; height: 160px;">
+          <h4>&nbsp;&nbsp;&nbsp;&nbsp; Donors: {{countDonors}} </h4>
+          </center>           
+      </div>
+      </div>
+      <!--Request count -->
+      <div class="col-md-6">
+      <div class="panel">
+          <center>
+          <img src="images/requests.jpg" style="width: 160px; height: 160px;">
+          <h4>&nbsp;&nbsp;&nbsp;&nbsp; Requests: {{countRequests}} </h4>
+          </center>           
+      </div>
+      </div>
+    </div>
+
+    <div>
+      <table class="table table-bordered table-hover">
+    <thead>
+      <tr style="background-color: #e31933;color: #ffffff;" >
+        <th>Patient Name</th>
+        <th>Blood Group</th>
+        <th>Hospital Name</th>
+        <th>Contact Name</th>
+        <th>Contact Email</th>
+        <th>Contact Number</th>        
+      </tr>
+    </thead>
+    <tbody style="background: rgba(255,255,255,0.5);">
+      <div>
+        <tr ng-repeat="request in requests | orderBy:'Hospital_Name' | limitTo: '5' ">
+          <td>{{request.Patient_Name}}</td>
+          <td>{{request.Bloodgroup}}</td>
+          <td>{{request.Hospital_Name}}</td>
+          <td>{{request.Contact_Name}}</td>
+          <td>{{request.Contact_Email}}</td>
+          <td>{{request.Contact_Number}}</td>
+        </tr>       
+      </div>      
+    </tbody>    
+  </table>
+    </div>
+  </div>
+</div>
