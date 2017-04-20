@@ -22,6 +22,9 @@ app.config(['$routeProvider', function($routeProvider){
 	    .when('/contact', {
 	    	templateUrl: 'partials/contact.html'
 	    })
+	    .when('/mentor', {
+	    	templateUrl: 'partials/mentor.html'
+	    })
 	    .when('/healthyliving/home', {
 	    	templateUrl: 'static-partials/healthyhome.html'
 	    })
